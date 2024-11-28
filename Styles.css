@@ -1,24 +1,94 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 20px;
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-h1 {
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    padding: 20px;
+}
+
+/* Container for the quiz */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styling */
+h1, h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Styling for each question */
+.question {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+/* Styling for answer input field */
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Timer and score styling */
+.timer, .score {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 20px;
     color: #333;
 }
 
-#quiz-container {
-    margin-top: 20px;
-}
-
-#results-container {
-    margin-top: 20px;
-}
-
 button {
-    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
     padding: 10px 20px;
-    font-size: 16px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Styling for next and finish buttons */
+button.next, button.finish {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Quiz result styling */
+.result {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 30px;
+    color: #4CAF50;
+}
+
+.footer {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 40px;
+    color: #777;
 }
