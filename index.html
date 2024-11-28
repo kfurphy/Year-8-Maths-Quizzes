@@ -1,27 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Year 9 Maths Quiz</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
 <body>
-    <div id="main-screen">
-        <h1>Year 9 Maths Quizzes</h1>
-        <div id="scores-container"></div>
-        <a href="quiz.html?topic=equations">Solving Equations</a><br>
-        <a href="quiz.html?topic=straightline">Straight Line Graphs</a><br>
-        <a href="quiz.html?topic=probability">Probability</a><br>
-        <a href="quiz.html?topic=percentages">Percentages and Ratios</a>
-    </div>
-    <script>
-        // Display scores for each quiz and the total
-        const scores = JSON.parse(localStorage.getItem('quizScores') || '{}');
-        const scoresContainer = document.getElementById('scores-container');
-        let totalScore = 0;
+    <div class="container">
+        <h1>Year 9 Maths Quiz</h1>
 
-        if (Object.keys(scores).length > 0) {
-            scoresContainer.innerHTML = "<h2>Your Scores:</h2>";
-            for (const [quiz, score] of Object.entries(scores)) {
-                scoresContainer.innerHTML += `<p>${quiz}: ${score}</p>`;
-                totalScore += score;
-            }
-            scoresContainer.innerHTML += `<p><strong>Total Score: ${totalScore}</strong></p>`;
-        } else {
-            scoresContainer.innerHTML = "<p>No quizzes completed yet.</p>";
-        }
-    </script>
+        <div id="quiz-container">
+            <h2 id="quiz-title">Solving Equations</h2>
+            <div id="question-container">
+                <!-- Question will be inserted here -->
+            </div>
+
+            <div id="timer" class="timer">Time left: <span id="time-left">30</span> seconds</div>
+            
+            <div class="question">
+                <label for="answer">x = </label>
+                <input type="text" id="answer" name="answer" placeholder="Enter your answer here">
+            </div>
+
+            <button id="next-btn" class="next">Next Question</button>
+
+            <div id="score" class="score">Score: 0</div>
+        </div>
+
+        <div id="result-container" class="result" style="display: none;">
+            <h2>Quiz Complete!</h2>
+            <p>Your final score is: <span id="final-score">0</span></p>
+            <button onclick="window.location.reload();">Retry Quiz</button>
+        </div>
+
+        <div class="footer">
+            <p>Quiz created by Your Name - Year 9 Maths</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
+</html>
